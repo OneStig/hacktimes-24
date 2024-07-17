@@ -2,12 +2,14 @@
 // Created by Steven He on 7/17/24.
 //
 
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <unordered_set>
 #include <string>
 #include <array>
+#include <functional>
 
 using namespace std;
 

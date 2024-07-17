@@ -1,14 +1,28 @@
 #include "scoring.cpp"
 
 #include <iostream>
+#include <string>
 #include <chrono>
+#include <execution>
+#include <random>
 
 int main() {
     Scoring scoring;
-    string node_labels = "SPLERIALATNSPSEGERD";
 
     auto startTime = std::chrono::high_resolution_clock::now();
-    int score = scoring.score(node_labels);
+
+    // Start operation here
+
+    std::vector<std::pair<int, std::string>> data(100, {0, "SPLERIALATNSPSEGERD"});
+    std::for_each(std::execution::par, data.begin(), data.end(), [&scoring](auto &cur) {
+        cur.first = scoring.score(cur.second);
+    });
+
+    // string node_labels = "SPLERIALATNSPSEGERD";
+    // int score = scoring.score(node_labels);
+
+    // End operation here
+
     auto endTime = std::chrono::high_resolution_clock::now();
 
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime);
@@ -24,6 +38,6 @@ int main() {
         milliseconds << " ms" << endl;
 
 
-    cout << "Score: " << score << endl;
+    // cout << "Score: " << score << endl;
     return 0;
 }
