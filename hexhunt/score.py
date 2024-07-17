@@ -35,6 +35,8 @@ def _build_trie(dictionary: Iterable[str]) -> Trie:
         trie.insert(word)
     return trie
 
+ALPHABET = string.ascii_uppercase
+
 GRAPH = [
     [1, 3, 4],
     [0, 2, 4, 5],
