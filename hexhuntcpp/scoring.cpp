@@ -53,8 +53,6 @@ inline Trie* build_trie(const unordered_set<string>& dictionary) {
     return trie;
 }
 
-const array<string, 26> ALPHABET = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-
 const array<vector<int>, 19> GRAPH = {
     vector<int>{1, 3, 4}, vector<int>{0, 2, 4, 5}, vector<int>{1, 5, 6},
     vector<int>{0, 4, 7, 8}, vector<int>{0, 1, 3, 5, 8, 9}, vector<int>{1, 2, 4, 6, 9, 10},
